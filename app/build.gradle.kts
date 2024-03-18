@@ -23,7 +23,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -52,21 +52,36 @@ android {
 
 dependencies {
 
-    implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
+//    implementation(libs.core.ktx)
+//    implementation(libs.lifecycle.runtime.ktx)
+//    implementation(libs.activity.compose)
+//    implementation(platform(libs.compose.bom))
+//    implementation(libs.ui)
+//    implementation(libs.ui.graphics)
+//    implementation(libs.ui.tooling.preview)
+//    implementation(libs.material3)
+
+    val nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+
+    implementation (libs.core.ktx)
+    implementation (libs.lifecycle.runtime.ktx)
+    implementation (platform (libs.compose.bom) )
+    implementation (libs.activity.compose)
+    implementation (libs.ui)
+    implementation (libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
+    implementation (libs.material3)
 
+    implementation(libs.accompanist.systemuicontroller)
 
-//    testImplementation(libs.junit)
-//    androidTestImplementation(libs.androidx.test.ext.junit)
-//    androidTestImplementation(libs.espresso.core)
-//    androidTestImplementation(platform(libs.compose.bom))
-//    androidTestImplementation(libs.ui.test.junit4)
-//    debugImplementation(libs.ui.tooling)
-//    debugImplementation(libs.ui.test.manifest)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(platform(libs.compose.bom))
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
 }
