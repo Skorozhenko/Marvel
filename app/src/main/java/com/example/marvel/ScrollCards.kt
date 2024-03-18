@@ -48,7 +48,7 @@ fun ScrollCard(onClick: (Int) -> Unit, scrollState: LazyListState) {
 
 @Composable
 fun HeroCard(hero: Hero, onClick: (Int) -> Unit = {}) {
-    var isHover = remember { mutableStateOf(false) }
+    val isHover = remember { mutableStateOf(false) }
 
     val backgroundColor = if (isHover.value) {
         AppTheme.BgColor.hover
